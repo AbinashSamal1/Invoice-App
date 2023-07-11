@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { customer } from './model/customerInfo.model';
 import { DatePipe } from '@angular/common';
-import { services } from './model/services.model';
 
 
 class Product {

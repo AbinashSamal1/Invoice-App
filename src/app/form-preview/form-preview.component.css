@@ -1,0 +1,471 @@
+.card {
+    width: 595px;
+    height: 830px;
+    border-radius: 22px;
+    background: #FFF;
+    margin: auto;
+}
+
+.rectangle1 {
+    width: 575px;
+    height: 174px;
+    left: 10px;
+    top: 10px;
+    position: absolute;
+    background: #F2F5F9;
+    border-radius: 12px
+}
+
+.billedTo {
+    left: 30px;
+    top: 84px;
+    position: absolute;
+    text-align: right;
+    color: #60737D;
+    font-size: 10px;
+    font-family: Inter;
+    font-weight: 400;
+    word-wrap: break-word
+}
+
+.detailsTab {
+    left: 30px;
+    top: 104px;
+    position: absolute;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+    display: inline-flex
+}
+
+.clientName {
+    color: #121722;
+    font-size: 14px;
+    font-family: Inter;
+    font-weight: 600;
+    word-wrap: break-word
+}
+
+.address {
+    color: #121722;
+    width: 150px;
+    font-size: 10px;
+    font-family: Inter;
+    font-weight: 400;
+    word-wrap: break-word
+}
+
+.header {
+    left: 30px;
+    top: 37px;
+    position: absolute;
+    color: #121722;
+    font-size: 20px;
+    font-family: Inter;
+    font-weight: 700;
+    word-wrap: break-word
+}
+
+.group1 {
+    width: 535px;
+    height: 16px;
+    left: 30px;
+    top: 224px;
+    position: absolute;
+    color: #121722;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.qty {
+    left: 285px;
+    top: 2px;
+    position: absolute;
+    text-align: right;
+    color: #60737D;
+    font-size: 10px;
+    font-family: Inter;
+    font-weight: 400;
+    word-wrap: break-word
+}
+
+.price {
+    left: 374px;
+}
+
+.total {
+    left: 490px;
+}
+
+.group2 {
+    top: 298px;
+}
+
+.frame2 {
+    width: 90px;
+    left: 475px;
+    top: 30px;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 22px;
+    display: inline-flex
+}
+
+.invoiceNumber {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    display: flex;
+    gap: 4px;
+}
+
+.invoice {
+    color: #60737D;
+    font-size: 10px;
+    font-family: Inter;
+    font-weight: 400;
+}
+
+.invoiceId {
+    color: #121722;
+    font-size: 13px;
+    font-family: Inter;
+    font-weight: 700;
+}
+
+.dates {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 12px;
+    display: flex
+}
+
+.issuedDate {
+    flex-direction: column;
+    gap: 2px;
+    display: flex;
+    text-align: right;
+    font-size: 10px;
+    color: #60737D;
+    font-family: Inter;
+    font-weight: 400;
+}
+
+.dateTab {
+    color: #121722
+}
+
+.invoiceItems {
+    left: 30px;
+    top: 252px;
+    position: absolute;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 14px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.invoiceItems1 {
+    display: inline-flex;
+    width: 535px;
+    gap: 30px;
+    font-size: 11px;
+    color: #121722;
+    font-family: Inter;
+    font-weight: 400;
+}
+
+.serviceItem {
+    width: 250px;
+}
+
+.quantityItem {
+    width: 30px;
+    text-align: right;
+    color: #60737D;
+}
+
+.priceItem {
+    text-align: right;
+    color: #60737D;
+}
+
+.priceItem {
+    width: 90px;
+    text-align: right;
+    color: #60737D;
+}
+
+.totalCount {
+    width: 90px;
+    text-align: right;
+    color: #60737D;
+}
+
+.taxItems {
+    left: 30px;
+    top: 328px;
+    position: absolute;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 14px;
+    display: inline-flex
+}
+
+.taxItems1 {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    display: flex
+}
+
+.taxItems2 {
+    width: 535px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    display: inline-flex
+}
+
+.taxItems3 {
+    width: 250px;
+    color: #121722;
+    font-size: 11px;
+    font-family: Inter;
+    font-weight: 400;
+}
+
+.taxQty {
+    width: 30px;
+    text-align: right;
+    color: #60737D;
+    font-size: 11px;
+    font-family: Inter;
+    font-weight: 400;
+    word-wrap: break-word
+}
+
+.taxPrice {
+    width: 90px;
+}
+
+.taxTotal {
+    width: 90px;
+    text-align: right;
+    color: #121722;
+}
+
+.totalAmount {
+    width: 243px;
+    height: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    left: 342px;
+    top: 488px;
+    position: absolute;
+    background: #F2F5F9;
+    border-radius: 12px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    display: inline-flex
+}
+
+.currency {
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 4px;
+    display: flex
+}
+
+.totalWrap {
+    text-align: right;
+    color: #60737D;
+    font-size: 10px;
+    font-family: Inter;
+    font-weight: 400;
+}
+
+.currencyTab {
+    justify-content: center;
+    align-items: center;
+    gap: 1px;
+    display: flex
+}
+
+.bracketOpen {
+    text-align: right;
+    color: #60737D;
+    font-size: 10px;
+    font-family: Inter;
+    font-weight: 400;
+    word-wrap: break-word
+}
+
+.usd {
+    text-align: right;
+    color: #121722;
+    font-size: 10px;
+    font-family: Inter;
+    font-weight: 400;
+}
+
+.totalAmount1 {
+    text-align: right;
+    color: #121722;
+    font-size: 16px;
+    font-family: Inter;
+    font-weight: 700;
+}
+
+.company {
+    height: 195px;
+    left: 30px;
+    top: 568px;
+    position: absolute;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 12px;
+    display: inline-flex
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex
+}
+
+.frame3 {
+    align-self: stretch;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 12px;
+    display: inline-flex;
+    font-family: Inter;
+}
+
+.companyDetails {
+    width: 225px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+    display: inline-flex
+}
+
+.companyNameLlc {
+    align-self: stretch;
+    color: #121722;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.companyAddressInfo {
+    color: #121722;
+    font-size: 7px;
+    font-weight: 500;
+    line-height: 10px;
+    width: 108px;
+}
+
+.companyEmail {
+    color: #334BC8;
+    font-size: 10px;
+}
+
+.Id1 {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2px;
+    display: flex
+}
+
+.panLabel {
+    text-align: right;
+    color: #60737D;
+    font-size: 10px;
+}
+
+.panNumber {
+    color: #121722;
+    font-size: 10px;
+    font-family: Inter;
+}
+
+.paymentInstructions {
+    flex: 1 1 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+    display: inline-flex;
+    width: 240px;
+    font-size: 10px;
+    font-family: Inter;
+}
+
+.paymentInstructions1 {
+    color: #121722;
+    font-weight: 600;
+}
+
+.techriff {
+    align-self: stretch;
+    color: #60737D;
+    font-weight: 700;
+}
+
+.accountDetails {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    display: flex
+}
+
+.labelAccount {
+    color: #60737D;
+    font-weight: 400;
+}
+
+.IFSC {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    display: flex;
+    color: #60737D;
+}
+
+.IFSCCode {
+    color: #121722;
+}
+
+.additionalNotes {
+    flex: 1 1 0;
+    flex-direction: column;
+    display: inline-flex;
+    gap: 8px;
+    font-size: 10px;
+    color: #121722;
+    font-weight: 600;
+}
+
+.greatDay {
+    color: #60737D;
+    font-weight: 400;
+}

@@ -1,0 +1,116 @@
+<div class="card border" id="pdfContent">
+    <div class="shadow-sm">
+        <div class="rectangle1"></div>
+        <div class="billedTo">Billed To:</div>
+        <div class="detailsTab">
+            <div class="clientName">{{formData.name}}</div>
+            <div class="address">{{formData.address}}</div>
+        </div>
+        <div class="header">Invoice</div>
+        <div class="group1">
+            <div>Services</div>
+            <div class="qty">Qty.</div>
+            <div class="price qty">Unit Price</div>
+            <div class="total qty">Total (Rs)</div>
+        </div>
+        <div class="group1 group2">
+            <div>Taxes</div>
+            <div class="qty">Qty</div>
+            <div class="price qty">Unit Price(%)</div>
+            <div class="total qty">Total</div>
+        </div>
+        <div class="frame2">
+            <div class="invoiceNumber">
+                <div class="invoice">Invoice No.</div>
+                <div class="invoiceId">#T0623/0001</div>
+            </div>
+            <div class="dates">
+                <div class="issuedDate">
+                    <div>Issued on</div>
+                    <div class="dateTab">{{formData.currentDate|date:'mediumDate'}}</div>
+                </div>
+                <div class="issuedDate">
+                    <div>Payment Due</div>
+                    <div class="dateTab">{{formData.date|date:'mediumDate'}}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="invoiceItems" *ngFor="let item of formData.services">
+            <div class="invoiceItems1">
+                <div class="serviceItem">{{item.service}}</div>
+                <div class="quantityItem">{{item.qty}}</div>
+                <div class="priceItem">{{item.price}}</div>
+                <div class="totalCount">{{item.qty*item.price}}</div>
+            </div>
+        </div>
+        <div class="taxItems" *ngFor="let tax of formData.services">
+            <div class="taxItems1">
+                <div class="taxItems2">
+                    <div class="taxItems3">Tax name</div>
+                    <div class="taxQty">{{tax.qty}}</div>
+                    <div class="taxQty taxPrice">18%</div>
+                    <div class="taxTotal taxQty">{{getGST()}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="totalAmount">
+            <div class="currency">
+                <div class="totalWrap">Total</div>
+                <div class="currencyTab">
+                    <div class="bracketOpen">(</div>
+                    <div>
+                        <div class="usd">Rs</div>
+                    </div>
+                    <div class="bracketOpen">)</div>
+                </div>
+            </div>
+            <div class="totalAmount1">{{getGrandTotal()}}</div>
+        </div>
+        <div class="company">
+            <div class="logo">
+                <div>
+                    <img class="logoImage" style="width: 40px; height: 40px" src="/assets/Logo.png" />
+                </div>
+            </div>
+            <div class="frame3">
+                <div class="companyDetails">
+                    <div class="companyNameLlc">Techriff Private Limited</div>
+                    <div class="companyAddressInfo">AT-BADABALIKUDA PO-JANAKA BRAHMABARADA JAJAPUR OR 755005 IN</div>
+                    <div class="companyEmail">info@techriff.com</div>
+                    <div class="Id1">
+                        <div class="panLabel">PAN</div>
+                        <div class="panNumber">AAJCT4596J</div>
+                    </div>
+                    <div class="Id1">
+                        <div class="panLabel">GSTIN</div>
+                        <div class="panNumber">21AAJCT4596J1ZY</div>
+                    </div>
+                </div>
+                <div class="paymentInstructions">
+                    <div class="paymentInstructions1">Payment Instructions</div>
+                    <div class="techriff">Techriff Private Limited</div>
+                    <div class="accountDetails">
+                        <div class="labelAccount">Account number</div>
+                        <div>49450200000300</div>
+                    </div>
+                    <div class="IFSC">
+                        <div>IFSC</div>
+                        <div class="IFSCCode">BARB0GANKHO</div>
+                    </div>
+                </div>
+                <div class="additionalNotes">
+                    <div>Additional Notes</div>
+                    <div class="greatDay">Have a great day</div>
+                </div>
+            </div>
+        </div>
+        <img class="Techriff" style="width: 44px; height: 10px; left: 30px; top: 25px; position: absolute"
+            src="/assets/BottomLogo.png" />
+        <img class="Techriff" style="width: 57px; height: 14px; left: 501px; top: 809px; position: absolute"
+            src="/assets/BottomLogo.png" />
+    </div>
+</div>
+<div class="text-center mt-2">
+    <button class="btn btn-secondary" (click)="exportToPDF()">Export</button>
+</div>

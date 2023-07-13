@@ -1,5 +1,5 @@
 <div class="card border" id="pdfContent">
-    <div class="shadow-sm">
+    <div>
         <div class="rectangle1"></div>
         <div class="billedTo">Billed To:</div>
         <div class="detailsTab">
@@ -8,16 +8,50 @@
         </div>
         <div class="header">Invoice</div>
         <div class="group1">
-            <div>Services</div>
-            <div class="qty">Qty.</div>
-            <div class="price qty">Unit Price</div>
-            <div class="total qty">Total (Rs)</div>
+
         </div>
         <div class="group1 group2">
-            <div>Taxes</div>
-            <div class="qty">Qty</div>
-            <div class="price qty">Unit Price(%)</div>
-            <div class="total qty">Total</div>
+            <table class="table table-borderless custom-table">
+                <thead>
+                    <tr>
+                        <th scope="col" class="serviceHeader">Service</th>
+                        <th scope="col"></th>
+                        <th scope="col" class="Qty">Qty</th>
+                        <th scope="col" class=Qty>Unit price</th>
+                        <th scope="col" class="Qty">Total(Rs)</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let item of formData.services">
+                    <tr>
+                        <th scope="row" class="Qty">{{item.service}}</th>
+                        <td></td>
+                        <td class="Qty">{{item.qty}}</td>
+                        <td class="Qty">{{item.price}}</td>
+                        <td class="Qty">{{item.qty*item.price}}</td>
+                    </tr>
+
+                </tbody>
+                <thead class="margin">
+                    <tr>
+                        <th scope="col" class="serviceHeader">Taxes</th>
+                        <th scope="col" class="Qty"></th>
+                        <th scope="col" class="Qty">Qty</th>
+                        <th scope="col" class="Qty">Unit price(18%)</th>
+                        <th scope="col" class="Qty">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row" class="taxName">Tax names</th>
+                        <td></td>
+                        <td></td>
+                        <td class="Qty">18%</td>
+                        <td class="Qty">{{getGST()}}</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
         </div>
         <div class="frame2">
             <div class="invoiceNumber">
@@ -36,24 +70,6 @@
             </div>
         </div>
 
-        <div class="invoiceItems" *ngFor="let item of formData.services">
-            <div class="invoiceItems1">
-                <div class="serviceItem">{{item.service}}</div>
-                <div class="quantityItem">{{item.qty}}</div>
-                <div class="priceItem">{{item.price}}</div>
-                <div class="totalCount">{{item.qty*item.price}}</div>
-            </div>
-        </div>
-        <div class="taxItems" *ngFor="let tax of formData.services">
-            <div class="taxItems1">
-                <div class="taxItems2">
-                    <div class="taxItems3">Tax name</div>
-                    <div class="taxQty">{{tax.qty}}</div>
-                    <div class="taxQty taxPrice">18%</div>
-                    <div class="taxTotal taxQty">{{getGST()}}</div>
-                </div>
-            </div>
-        </div>
         <div class="totalAmount">
             <div class="currency">
                 <div class="totalWrap">Total</div>

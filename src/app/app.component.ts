@@ -95,6 +95,7 @@ export class AppComponent implements OnInit {
     const formData = this.form.value;
     this.showForm = false;
     this.showPreview = true
+    console.log(formData)
   }
 
 }

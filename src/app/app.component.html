@@ -1,5 +1,5 @@
 <div class="display-5 text-center">Invoice</div>
-<div class="container" *ngIf="showForm">
+<div class="container" *ngIf="showForm===false">
   <div>
     <form [formGroup]="form">
       <div class="mt-4">
@@ -88,4 +88,4 @@
     </form>
   </div>
 </div>
-<app-form-preview [formData]="form.value" *ngIf="showPreview"></app-form-preview>
+<app-form-preview [formData]="form.value" *ngIf="showPreview===false"></app-form-preview>

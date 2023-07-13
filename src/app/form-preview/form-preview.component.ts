@@ -15,7 +15,12 @@ export class FormPreviewComponent {
   getGST(): number {
     // Calculate GST based on the subtotal
     const gstPercentage = 0.18; // Assuming an 18% GST rate
-    return this.getSubTotal() * gstPercentage;
+    const gstAmount = this.getSubTotal() * gstPercentage;
+
+    // Format the GST amount with compulsory two decimal places
+    const formattedGST = gstAmount.toFixed(2);
+
+    return Number(formattedGST);
   }
 
   getSubTotal(): number {
@@ -24,12 +29,22 @@ export class FormPreviewComponent {
     for (const service of this.formData.services) {
       subtotal += service.qty * service.price;
     }
-    return subtotal;
+
+    // Format the subtotal with compulsory two decimal places
+    const formattedSubtotal = subtotal.toFixed(2);
+
+    return Number(formattedSubtotal);
   }
 
   getGrandTotal(): number {
     // Calculate grand total including GST
-    return this.getSubTotal() + this.getGST();
+    const grandTotal = this.getSubTotal() + this.getGST();
+
+    // Format the grand total with compulsory two decimal places and leading zeros
+    const formattedGrandTotal = grandTotal.toFixed(2).padStart(7, '0');
+
+    console.log(formattedGrandTotal);
+    return Number(formattedGrandTotal);
   }
 
   exportToPDF() {

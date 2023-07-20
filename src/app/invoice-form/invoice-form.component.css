@@ -1,0 +1,30 @@
+.card {
+    width: 75%;
+    margin: auto;
+}
+
+.btn-center {
+    border-radius: 5px;
+    box-shadow: 0 1px 2px #5e5d5b;
+    text-align: center;
+}
+
+.open {
+    margin: auto;
+}
+
+.plus-button {
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+}

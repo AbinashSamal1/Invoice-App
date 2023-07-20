@@ -1,6 +1,7 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
-import { jsPDF } from 'jspdf';
-import html2canvas from 'html2canvas';
+import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
+import jspdf from 'jspdf';
+import domtoimage from 'dom-to-image'
+
 
 @Component({
   selector: 'app-form-preview',
@@ -8,7 +9,6 @@ import html2canvas from 'html2canvas';
   styleUrls: ['./form-preview.component.css']
 })
 export class FormPreviewComponent {
-  @ViewChild('content') content!: ElementRef;
 
   @Input() formData: any;
 
@@ -43,23 +43,21 @@ export class FormPreviewComponent {
     // Format the grand total with compulsory two decimal places and leading zeros
     const formattedGrandTotal = grandTotal.toFixed(2).padStart(7, '0');
 
-    console.log(formattedGrandTotal);
     return Number(formattedGrandTotal);
   }
 
-  exportToPDF() {
-    const content = document.getElementById('pdfContent') as HTMLElement;
+  convertToPDF() {
+    const data = document.getElementById('printable-content')!;
 
-    html2canvas(content).then((canvas) => {
-      const imgData = canvas.toDataURL('image/png');
-      const pdf = new jsPDF();
-      const imgProps = pdf.getImageProperties(imgData);
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-
-      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-      pdf.save('form_preview.pdf');
+    domtoimage.toPng(data, { quality: 1, width: data.scrollWidth, height: data.scrollHeight }).then((url: any) => {
+      const pdf = new jspdf('p', 'mm', 'a4');
+      const pdfWidth = 210; // A4 page width in mm
+      const pdfHeight = (data.scrollHeight * pdfWidth) / data.scrollWidth;
+      pdf.addImage(url, 'PNG', 0, 0, pdfWidth, pdfHeight, '', 'FAST');
+      pdf.save('new-file.pdf');
+    }).catch((error: any) => {
+      console.error('Error converting to PNG:', error);
     });
   }
-
+  
 }

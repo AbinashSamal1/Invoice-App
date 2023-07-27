@@ -23,10 +23,10 @@
               </div>
               <div>
                 <label class="card-text h6">Issued On:</label>
-                <input class="form-control" [value]="Date" formControlName="currentDate">
+                <input class="form-control" [value]="Date" type="date" [max]="maxDate" formControlName="currentDate">
               </div>
               <label class="card-text h6">Payment Due:</label>
-              <input class="form-control" type="date" formControlName="date"
+              <input class="form-control" type="date" [min]="minDate" formControlName="date"
                 [ngClass]="{'is-invalid': isFieldInvalid('date')}">
               <div *ngIf="isFieldInvalid('date')" class="error-message">Please provide a due date</div>
             </div>
@@ -70,35 +70,39 @@
                   <td>{{ service.get('qty')?.value * service.get('price')?.value |currency:'INR':'symbol':'1.2-2'}}
                   </td>
                   <td>
-                    <div class="row">
-                      <button class="btn btn-danger btn-sm m-1 col-sm-1 btn-center plus-button"
-                        (click)="removeServiceDetailsRow(i)" *ngIf="i;">-</button>
-
-                      <button class="btn btn-primary col-sm-1 m-1 btn-sm btn-center plus-button"
-                        (click)="addServiceDetailsRow()" *ngIf="last">+</button>
-                    </div>
+                    <div>
+                  <td>
+                    <button class="btn btn-danger btn-sm m-1 col-sm-1 btn-center plus-button"
+                      (click)="removeServiceDetailsRow(i)" *ngIf="i;">-</button>
                   </td>
-                </tr>
-              </tbody>
-            </table>
-            <dl class="row">
-              <dt class="col-2 offset-8">Subtotal</dt>
-              <dd class="col-2">{{ subtotal | currency:'INR':'symbol':'1.2-2' }}</dd>
-              <dt class="col-2 offset-8">Tax ({{ (taxRate * 100) | number:'1.2-2' }}%)</dt>
-              <dd class="col-2">{{ tax | currency:'INR':'symbol':'1.2-2' }}</dd>
-              <dt class="col-2 offset-8">Total</dt>
-              <dd class="col-2">{{ total | currency:'INR':'symbol':'1.2-2' }}</dd>
-            </dl>
-            <div class="text-center mt-3">
-            </div>
+                  <td>
+                    <button class="btn btn-primary col-sm-1 m-1 btn-sm btn-center plus-button"
+                      (click)="addServiceDetailsRow()" *ngIf="last">+</button>
+                  </td>
+          </div>
+          </td>
+          </tr>
+          </tbody>
+          </table>
+          <dl class="row">
+            <dt class="col-2 offset-8">Subtotal</dt>
+            <dd class="col-2">{{ subtotal | currency:'INR':'symbol':'1.2-2' }}</dd>
+            <dt class="col-2 offset-8">Tax <span class="text-muted"> ({{ (taxRate * 100) | number:'1.2-2' }}%)</span>
+            </dt>
+            <dd class="col-2">{{ tax | currency:'INR':'symbol':'1.2-2' }}</dd>
+            <dt class="col-2 offset-8">Total</dt>
+            <dd class="col-2">{{ total | currency:'INR':'symbol':'1.2-2' }}</dd>
+          </dl>
+          <div class="text-center mt-3">
           </div>
         </div>
       </div>
     </div>
-    <div class="text-center">
-      <button class="btn btn-secondary mt-2" type="button" (click)="preview()" [disabled]="form.invalid">Open</button>
-    </div>
-  </form>
+</div>
+<div class="text-center">
+  <button class="btn btn-secondary mt-2" type="button" (click)="preview()" [disabled]="form.invalid">Open</button>
+</div>
+</form>
 </div>
 
 <app-form-preview [formData]="form.value" *ngIf="showPreview"></app-form-preview>

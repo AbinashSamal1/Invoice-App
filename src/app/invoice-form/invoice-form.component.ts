@@ -26,11 +26,17 @@ export class InvoiceFormComponent {
   taxRate: number = 0.18; // Assuming 18% tax rate
   tax: number = 0;
   total: number = 0;
+  minDate: string;
+  maxDate: string;
 
 
   constructor(
     private fb: FormBuilder, private datePipe: DatePipe
-  ) { }
+  ) {
+    const currentDate = new Date();
+    this.minDate = currentDate.toISOString().slice(0, 10);
+    this.maxDate = currentDate.toISOString().slice(0, 10);
+  }
 
   ngOnInit() {
     this.form = this.fb.group({
@@ -48,14 +54,14 @@ export class InvoiceFormComponent {
       this.updateTotalValues();
     });
 
-    this.form.valueChanges.subscribe((value) => {
-      console.log('Form value:', value);
-    });
+    // this.form.valueChanges.subscribe((value) => {
+    //   console.log('Form value:', value);
+    // });
 
-    // Subscribe to form statusChanges
-    this.form.statusChanges.subscribe((status) => {
-      console.log('Form status:', status);
-    });
+    // // Subscribe to form statusChanges
+    // this.form.statusChanges.subscribe((status) => {
+    //   console.log('Form status:', status);
+    // });
   }
 
   get services(): FormArray {
@@ -79,7 +85,6 @@ export class InvoiceFormComponent {
     const formData = this.form.value;
     this.showForm = false; // Set showForm to false to hide the Invoice form
     this.showPreview = true; // Set showPreview to true to show the form-preview component
-    console.log(formData);
   }
 
   isFieldInvalid(field: string): boolean {

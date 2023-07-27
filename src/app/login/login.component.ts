@@ -38,7 +38,6 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       this.auth.login(this.loginForm.value).subscribe(
         (result) => {
-          console.log(result);
           this.router.navigate(['invoice']);
         },
         (err: Error) => {
@@ -46,5 +45,11 @@ export class LoginComponent {
         }
       );
     }
+  }
+
+  showPassword = false;
+
+  togglePassword() {
+    this.showPassword = !this.showPassword;
   }
 }

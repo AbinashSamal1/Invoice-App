@@ -1,434 +1,354 @@
+.font {
+  font-family: Inter;
+}
+
 .card {
-    width: 595px;
-    border-radius: 22px;
-    background: #FFF;
-    margin: auto;
+  width: 595px;
+  border-radius: 22px;
+  background: #FFF;
+  margin: auto;
 }
 
 .rectangle1 {
-    width: 575px;
-    background: #F2F5F9;
-    border-radius: 12px;
-    margin: 10px;
+  width: 575px;
+  background: #F2F5F9;
+  border-radius: 12px;
+  margin: 10px;
 }
 
 .header {
-    color: #121722;
-    font-size: 20px;
-    font-family: Inter;
-    font-weight: 700;
-    padding-left: 20px;
-    padding-top: 27px;
+  font-size: 20px;
+  font-weight: 600;
+  padding-left: 20px;
+  padding-top: 27px;
 }
 
 .tab1 {
-    color: #121722;
-    font-family: Inter;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 700;
-    padding-left: 20px;
-    padding-bottom: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  padding-left: 20px;
+  padding-bottom: 20px;
 }
 
 .detailsTab {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .billedTo {
-    color: #60737D;
-    font-size: 10px;
-    font-family: Inter;
-    font-weight: 400;
-    padding-top: 23px;
+  color: #60737D;
+  font-size: 12px;
+  font-weight: 300;
+  padding-top: 23px;
 }
 
 .clientName {
-    color: #121722;
-    font-size: 14px;
-    font-family: Inter;
-    font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
+  width: 225px;
 }
 
 .address {
-    width: 175px;
-    color: #121722;
-    font-family: Inter;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+  width: 170px;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
+.div {
+  display: flex;
+}
+
+.div1 {
+  padding-top: 15px;
+  padding-left: 220px;
+  margin-bottom: 19px
+}
 
 .rect2 {
-    margin-left: 30px;
-    margin-top: 40px;
+  margin-left: 30px;
+  margin-top: 40px;
 }
 
 .column {
-    float: left;
-}
-
-.leftFloat {
-    float: left;
+  float: left;
 }
 
 .service_qtyMargin {
-    margin-left: 224px;
+  width: 30px;
 }
 
 .qty_priceMargin {
-    margin-left: 69px;
+  width: 115px;
+  margin-left: 15px;
 }
 
 .price_totalMargin {
-    margin-left: 79px;
+  width: 115px;
+  margin-left: 13px;
 }
 
 .serviceTitle {
-    font-size: 13px;
-    font-weight: 700;
+  font-size: 13px;
+  font-weight: 700;
 }
 
 .serviceNames {
-    font-size: 11px;
-    margin-top: 14px;
-    color: #60737D;
+  font-size: 11px;
+  margin-top: 14px;
 }
 
 .leftTabFromQty {
-    font-size: 10px;
-    color: #60737D;
-    font-weight: 400;
-    text-align: right;
+  font-size: 10px;
+  color: #60737D;
+  font-weight: 400;
+  text-align: right;
 }
 
 .tabBelowQty {
-    margin-top: 14px;
-    color: #60737D;
-    font-weight: 400;
-    font-size: 10px;
-    text-align: right;
+  margin-top: 14px;
+  color: #60737D;
+  font-weight: 400;
+  font-size: 11px;
+  text-align: right;
 }
 
 .leftTabFromQtyTaxes {
-    font-size: 10px;
-    color: #60737D;
-    font-weight: 400
+  font-size: 10px;
+  color: #60737D;
+  font-weight: 400;
+  text-align: right;
+}
+
+.column {
+  float: left;
+}
+
+.leftFloat {
+  float: left;
 }
 
 .service_qtyMarginTaxes {
-    margin-left: 230px
+  margin-left: 229px;
 }
 
 .qty_priceMargin1 {
-    margin-left: 57px;
+  margin-left: 63px;
 }
 
 .price_totalMargin2 {
-    margin-left: 91px;
+  margin-left: 73px;
 }
 
 .fourThou {
-    font-size: 11px;
-    font-weight: 400;
-    text-align: right;
-    margin-top: 14px;
+  font-size: 11px;
+  font-weight: 400;
+  text-align: right;
+  margin-top: 14px;
 }
-
-.body {
-    font-family: inter;
-}
-
 .frame2 {
-    width: 90px;
-    left: 475px;
-    top: 30px;
-    position: absolute;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 22px;
-    display: inline-flex
+  width: 90px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 22px;
+  display: inline-flex;
 }
 
 .invoiceNumber {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end;
-    display: flex;
-    gap: 4px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  display: flex;
+  gap: 4px;
 }
 
-/* .Rectangle5 {
-    height: 1px;
-    background: #F2F5F9;
-    border-radius: 2px;
-    background: black;
-    margin-top: 167px;
-    width: 334px;
-    margin-left: 10px;
-} */
-
 .invoice {
-    color: #60737D;
-    font-size: 10px;
-    font-family: Inter;
-    font-weight: 400;
+  color: #60737D;
+  font-size: 10px;
+  font-weight: 400;
 }
 
 .invoiceId {
-    color: #121722;
-    font-size: 13px;
-    font-family: Inter;
-    font-weight: 700;
+  color: #121722;
+  font-size: 13px;
+  font-weight: 700;
 }
 
 .dates {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end;
-    gap: 12px;
-    display: flex
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 12px;
+  display: flex;
 }
 
 .issuedDate {
-    flex-direction: column;
-    gap: 2px;
-    display: flex;
-    text-align: right;
-    font-size: 10px;
-    color: #60737D;
-    font-family: Inter;
-    font-weight: 400;
+  flex-direction: column;
+  gap: 2px;
+  display: flex;
+  text-align: right;
+  font-size: 10px;
+  color: #60737D;
+  font-weight: 400;
 }
-
-.dateTab {
-    color: #121722
-}
-
-.totalAmount {
-    width: 239px;
-    height: 40px;
-    padding-left: 20px;
-    padding-right: 20px;
-    background: #F2F5F9;
-    border-radius: 12px;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-    display: inline-flex;
-    margin-left: 332px;
-    margin-top: 167px;
-}
-
-
-.currency {
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 4px;
-    display: flex
-}
-
-.totalWrap {
-    text-align: right;
-    color: #60737D;
-    font-size: 10px;
-    font-family: Inter;
-    font-weight: 400;
-}
-
-.currencyTab {
-    justify-content: center;
-    align-items: center;
-    gap: 1px;
-    display: flex
-}
-
-.bracketOpen {
-    text-align: right;
-    color: #60737D;
-    font-size: 10px;
-    font-family: Inter;
-    font-weight: 400;
-    word-wrap: break-word
-}
-
-.usd {
-    text-align: right;
-    color: #121722;
-    font-size: 10px;
-    font-family: Inter;
-    font-weight: 400;
-}
-
 .totalAmount1 {
-    text-align: right;
-    color: #121722;
-    font-size: 16px;
-    font-family: Inter;
-    font-weight: 700;
+  text-align: right;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .company {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 12px;
-    display: inline-flex;
-    margin-top: 40px;
-    margin-left: 30px
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 12px;
+  display: inline-flex;
+  margin-top: 40px;
+  margin-left: 30px;
 }
 
 .logo {
-    width: 40px;
-    height: 40px;
-    justify-content: center;
-    align-items: center;
-    display: inline-flex
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
 }
 
 .frame3 {
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 12px;
-    display: inline-flex;
-    font-family: Inter;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 12px;
+  display: inline-flex;
+  margin-top: 12px;
 }
 
 .companyDetails {
-    width: 225px;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 8px;
-    display: inline-flex
+  width: 225px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+  display: inline-flex;
 }
 
 .companyNameLlc {
-    color: #121722;
-    font-size: 14px;
-    font-weight: 700;
+  font-size: 14px;
+  font-weight: 700;
+  width: 220px;
 }
 
 .companyAddressInfo {
-    color: #121722;
-    font-size: 7px;
-    font-weight: 500;
-    line-height: 10px;
-    width: 108px;
+  font-size: 7px;
+  font-weight: 500;
+  line-height: 10px;
+  width: 120px;
 }
 
 .companyEmail {
-    color: #334BC8;
-    font-size: 10px;
+  color: #334BC8;
+  font-size: 10px;
 }
 
 .Id1 {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 2px;
-    display: flex
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2px;
+  display: flex;
 }
 
 .panLabel {
-    text-align: right;
-    color: #60737D;
-    font-size: 10px;
+  text-align: right;
+  color: #60737D;
+  font-size: 10px;
 }
 
 .panNumber {
-    color: #121722;
-    font-size: 10px;
-    font-family: Inter;
+  font-size: 10px;
 }
 
 .paymentInstructions {
-    flex: 1 1 0;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 8px;
-    display: inline-flex;
-    width: 240px;
-    font-size: 10px;
-    font-family: Inter;
+  flex: 1 1 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+  display: inline-flex;
+  width: 240px;
+  font-size: 10px;
 }
 
 .paymentInstructions1 {
-    color: #121722;
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .techriff {
-    color: #60737D;
-    font-weight: 700;
+  color: #60737D;
+  font-weight: 700;
 }
 
 .accountDetails {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2px;
-    display: flex
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  display: flex;
 }
 
 .labelAccount {
-    color: #60737D;
-    font-weight: 400;
+  color: #60737D;
+  font-weight: 400;
 }
 
 .IFSC {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2px;
-    display: flex;
-    color: #60737D;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  display: flex;
+  color: #60737D;
 }
-
-.IFSCCode {
-    color: #121722;
-}
-
 .additionalNotes {
-    flex: 1 1 0;
-    flex-direction: column;
-    display: inline-flex;
-    gap: 8px;
-    font-size: 10px;
-    color: #121722;
-    font-weight: 600;
+  flex: 1 1 0;
+  flex-direction: column;
+  display: inline-flex;
+  gap: 8px;
+  font-size: 10px;
+  font-weight: 600;
 }
 
 .greatDay {
-    color: #60737D;
-    font-weight: 400;
+  color: #60737D;
+  font-weight: 400;
 }
 
-.serviceHeader {
-    color: #121722;
-    font-size: 13px;
-    font-family: Inter;
-    font-weight: 700
+.line-container {
+  width: 575px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
 }
 
-.Qty {
-    color: #60737D;
-    font-size: 10px;
-    font-family: Inter;
-    font-weight: 400;
+.line {
+  border-top: 1px solid #F2F5F9;
+  flex: 1;
+  height: 0;
 }
 
-.taxName {
-    color: #121722;
-    font-size: 11px;
-    font-family: Inter;
-    font-weight: 400;
+.box {
+  display: flex;
+  width: 243px;
+  height: 40px;
+  padding: 0px 15px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 12px;
+  background-color: #F2F5F9;
 }
 
-.margin {
-    margin-top: 100px;
+.grandTotalSection {
+  margin-top: 147px;
 }

@@ -1,49 +1,33 @@
-<div id="printable-content">
-    <div class="card border">
-        <div>
-            <div class="rectangle1">
-                <div class="header">Invoice</div>
-                <div class="tab1">
-                    <div class="detailsTab">
-                        <div class="billedTo">Billed To:</div>
-                        <div class="clientName">{{formData.name}}</div>
-                        <div class="address">{{formData.address}}</div>
-                    </div>
-                </div>
-                <div class="frame2">
-                    <div class="invoiceNumber">
-                        <div class="invoice">Invoice No.</div>
-                        <div class="invoiceId">{{formData.invoiceNo}}</div>
-                    </div>
-                    <div class="dates">
-                        <div class="issuedDate">
-                            <div>Issued on</div>
-                            <div class="dateTab">{{formData.currentDate|date:'mediumDate'}}</div>
-                        </div>
-                        <div class="issuedDate">
-                            <div>Payment Due</div>
-                            <div class="dateTab">{{formData.date|date:'mediumDate'}}</div>
+<div class="card border mt-4 font" id="printable-content">
+    <div>
+        <div class="rectangle1">
+            <div class="div">
+                <div class="div2">
+                    <div class="header">Invoice</div>
+                    <div class="tab1">
+                        <div class="detailsTab">
+                            <div class="billedTo">Billed To:</div>
+                            <div class="clientName">{{formData.name}}</div>
+                            <div class="address">{{formData.address}}</div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="rect2">
-                <div class="rows">
-                    <div class="column">
-                        <div class="serviceTitle">Service</div>
-                        <div class="serviceNames" *ngFor="let item of formData.services">{{item.service}}</div>
-                    </div>
-                    <div class="column service_qtyMargin">
-                        <div class="leftTabFromQty">Qty</div>
-                        <div class="tabBelowQty" *ngFor="let item of formData.services">{{item.qty}}</div>
-                    </div>
-                    <div class="column qty_priceMargin">
-                        <div class="leftTabFromQty">Unit Price</div>
-                        <div class="tabBelowQty" *ngFor="let item of formData.services">{{item.price}}</div>
-                    </div>
-                    <div class="column price_totalMargin">
-                        <div class="leftTabFromQty">Total(Rs)</div>
-                        <div class="tabBelowQty" *ngFor="let item of formData.services">{{item.price*item.qty}}</div>
+                <div class="div1">
+                    <div class="frame2">
+                        <div class="invoiceNumber">
+                            <div class="invoice">Invoice No.</div>
+                            <div class="invoiceId">{{formData.invoiceNo}}</div>
+                        </div>
+                        <div class="dates">
+                            <div class="issuedDate">
+                                <div>Issued on</div>
+                                <div class="dateTab">{{formData.currentDate|date:'mediumDate'}}</div>
+                            </div>
+                            <div class="issuedDate">
+                                <div>Payment Due</div>
+                                <div class="dateTab">{{formData.date|date:'mediumDate'}}</div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -53,93 +37,124 @@
         <div class="rect2">
             <div class="rows">
                 <div class="column">
-                    <div class="serviceTitle">Taxes</div>
-                    <div class="serviceNames">GST</div>
+                    <div style="width: 250px;">
+                        <div class="serviceTitle">Service</div>
+                        <div class="serviceNames" *ngFor="let item of formData.services">{{item.service}}</div>
+                    </div>
+
+                    <div style="margin-top: 30px;">
+                        <div class="serviceTitle">Taxes</div>
+                        <div class="serviceNames">GST</div>
+                    </div>
                 </div>
-                <div class="column service_qtyMarginTaxes">
-                    <div class="leftTabFromQtyTaxes">Qty</div>
-                    <div class="tabBelowQty">1</div>
+                <div class="column service_qtyMargin">
+                    <div>
+                        <div class="leftTabFromQty">Qty</div>
+                        <div class="tabBelowQty" *ngFor="let item of formData.services">{{item.qty}}</div>
+                    </div>
+
+                    <div style="margin-top: 40px;">
+                        <div class="leftTabFromQtyTaxes">Qty</div>
+                        <div class="tabBelowQty">{{calculateTotalQuantity()}}</div>
+                    </div>
                 </div>
-                <div class="column qty_priceMargin1">
-                    <div class="leftTabFromQty">Unit Price(%)</div>
-                    <div class="tabBelowQty"></div>
+                <div class="column qty_priceMargin">
+                    <div>
+                        <div class="leftTabFromQty">Unit Price</div>
+                        <div class="tabBelowQty" *ngFor="let item of formData.services">
+                            {{item.price|currency:'INR':'symbol':'1.2-2' }}</div>
+                    </div>
+
+                    <div style="margin-top: 40px;">
+                        <div class="leftTabFromQty">Unit Price(%)</div>
+                        <div class="tabBelowQty">18%</div>
+                    </div>
                 </div>
-                <div class="column price_totalMargin2">
-                    <div class="leftTabFromQty">Total</div>
-                    <div class="fourThou">{{getGST()}}</div>
+                <div class="column price_totalMargin">
+                    <div>
+                        <div class="leftTabFromQty">Total(Rs)</div>
+                        <div class="tabBelowQty" *ngFor="let item of formData.services">
+                            {{item.price*item.qty|currency:'INR':'symbol':'1.2-2' }}</div>
+                    </div>
+
+                    <div style="margin-top: 40px;">
+                        <div class="leftTabFromQty">Total</div>
+                        <div class="fourThou">{{getGST()|currency:'INR':'symbol':'1.2-2' }}</div>
+                    </div>
                 </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div>
+        <div>
+               <!-- testing -->
+            <div class="grandTotalSection">
+                <div class="line-container">
+                    <div class="line"></div>
+                    <div class="box">
+                        <div style="font-size: 10px;font-weight: 400;">
+                            <span style="color: #60737D;">
+                                Total
+                            </span>
+                            <span style="color: #60737D;">(</span>Rs<span style="color: #60737D;">)</span>
+                        </div>
+                        <div class="totalAmount1">{{ getGrandTotal() |number:'1.2-2' }}</div>
+                    </div>
+                </div>
+
             </div>
         </div>
-        <div>
-            <div>
-                <div class="rows">
-                    <div class="leftFloat">
-                        <div class="Rectangle5">
-                        </div>
-                        <div class="totalAmount">
-                            <div class="currency">
-                                <div class="totalWrap">Total</div>
-                                <div class="currencyTab">
-                                    <div class="bracketOpen">(</div>
-                                    <div>
-                                        <div class="usd">Rs</div>
-                                    </div>
-                                    <div class="bracketOpen">)</div>
-                                </div>
-                            </div>
-                            <div class="totalAmount1">{{getGrandTotal()}}</div>
-                        </div>
-                    </div>
+        <div class="company">
+            <div class="logo">
+                <div>
+                    <img class="logoImage" style="width: 40px; height: 40px;margin-top: 40px;margin-bottom: 24px;"
+                        src="/assets/Logo.png" />
                 </div>
             </div>
-            <div class="company">
-                <div class="logo">
-                    <div>
-                        <img class="logoImage" style="width: 40px; height: 40px;margin-top: 40px;margin-bottom: 24px;"
-                            src="/assets/Logo.png" />
+            <div class="frame3">
+                <div class="companyDetails">
+                    <div class="companyNameLlc">Techriff Private Limited</div>
+                    <div class="companyAddressInfo">AT-BADABALIKUDA &nbsp;PO-JANAKA BRAHMABARADA &nbsp;JAJAPUR OR
+                        755005
+                        IN
+                    </div>
+                    <div class="companyEmail">info@techriff.com</div>
+                    <div class="Id1">
+                        <div class="panLabel">PAN</div>
+                        <div class="panNumber">AAJCT4596J</div>
+                    </div>
+                    <div class="Id1">
+                        <div class="panLabel">GSTIN</div>
+                        <div class="panNumber">21AAJCT4596J1ZY</div>
                     </div>
                 </div>
-                <div class="frame3">
-                    <div class="companyDetails">
-                        <div class="companyNameLlc">Techriff Private Limited</div>
-                        <div class="companyAddressInfo">AT-BADABALIKUDA PO-JANAKA BRAHMABARADA JAJAPUR OR 755005 IN
-                        </div>
-                        <div class="companyEmail">info@techriff.com</div>
-                        <div class="Id1">
-                            <div class="panLabel">PAN</div>
-                            <div class="panNumber">AAJCT4596J</div>
-                        </div>
-                        <div class="Id1">
-                            <div class="panLabel">GSTIN</div>
-                            <div class="panNumber">21AAJCT4596J1ZY</div>
-                        </div>
+                <div class="paymentInstructions">
+                    <div class="paymentInstructions1">Payment&nbsp;instructions</div>
+                    <div class="techriff">Techriff Private Limited</div>
+                    <div class="accountDetails">
+                        <div class="labelAccount">Account number</div>
+                        <div>49450200000300</div>
                     </div>
-                    <div class="paymentInstructions">
-                        <div class="paymentInstructions1">Payment Instructions</div>
-                        <div class="techriff">Techriff Private Limited</div>
-                        <div class="accountDetails">
-                            <div class="labelAccount">Account number</div>
-                            <div>49450200000300</div>
-                        </div>
-                        <div class="IFSC">
-                            <div>IFSC</div>
-                            <div class="IFSCCode">BARB0GANKHO</div>
-                        </div>
-                    </div>
-                    <div class="additionalNotes">
-                        <div>Additional Notes</div>
-                        <div class="greatDay">Have a great day</div>
+                    <div class="IFSC">
+                        <div>IFSC</div>
+                        <div class="IFSCCode">BARB0GANKHO</div>
                     </div>
                 </div>
-                <img class="Techriff" style="width: 57px; height: 14px; margin-left: 501px; margin-bottom: 19px;"
-                    src="/assets/BottomLogo.png" />
+                <div class="additionalNotes">
+                    <div>Additional&nbsp;notes</div>
+                    <div class="greatDay">Have a great day</div>
+                </div>
             </div>
-            <img class="Techriff" style="width: 44px; height: 10px; left: 30px; top: 25px; position: absolute"
+            <img class="Techriff" style="width: 57px; height: 14px; margin-left: 501px; margin-bottom: 19px;"
                 src="/assets/BottomLogo.png" />
         </div>
+        <img class="Techriff" style="width: 44px; height: 10px; left: 30px; top: 25px; position: absolute"
+            src="/assets/BottomLogo.png" />
     </div>
 </div>
 
 <div class="text-center mt-2">
-    <button class="btn btn-secondary" (click)="convertToPDF()">Export</button>
+    <button class="btn btn-secondary" (click)="downPdf()">Export</button>
 </div>

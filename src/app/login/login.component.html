@@ -1,54 +1,47 @@
-<div class="margin container">
-    <div class="card shadow" style="width: 35%;">
-        <div class="card-body ">
+<!-- Login -->
 
-
-            <h2 class="card-title text-center">Login</h2>
-            <form name="loginForm" [formGroup]="loginForm">
-                <div class="form-group mb-3">
-                    <label for="email" class="fs-md mb-2 fw-semibold col-xs-4 col-form-label">Email</label>
-                    <div class="col-xs-8">
-                        <input type="text" class="form-control" id="inputPhoneNumber" placeholder="Enter Email"
-                            formControlName="email" />
-                        <div class="form-text text-danger"
-                            *ngIf="email&& email.errors?.['required']&&(email.touched|| email.dirty)">
-                            Email is required
-                        </div>
-                        <div class="form-text text-danger"
-                            *ngIf="email&& (email.errors?.['email']) &&(email.touched||email.dirty)">
-                            Please Enter Valid Email
-                        </div>
-                    </div>
-
-                </div>
-                <div class="form-group mb-3">
-                    <label for="inputPassword" class="fs-md fw-semibold mb-2  col-xs-4 col-form-label">Password</label>
-                    <div class="col-xs-8">
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Enter Password"
-                            formControlName="password" />
-
-                        <div class="form-text text-danger"
-                            *ngIf="password&& password.errors?.['required']&&(password.touched|| password.dirty)">
-                            Password is required
-                        </div>
-                        <div class="form-text text-danger"
-                            *ngIf="password&& (password.errors?.['minlength']) &&(password.touched||password.dirty)">
-                            Password should be at least 6 charecters long
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row mt-3">
-                    <div class="col d-grid py-2">
-                        <button class="btn btn-primary py-2" type="button" [disabled]="loginForm.invalid"
-                            (click)="login()">
-                            Log In
-                        </button>
-                    </div>
-                </div>
-            </form>
-
-
-        </div>
+<div class="loginBox">
+    <div>
+        <div class="login">Login</div>
+        <div><img src="/assets/Hi, Welcome Back 👋.png"></div>
+        <div class="divider"></div>
     </div>
+
+    <form action="" [formGroup]="loginForm">
+        <div class="formLabel">
+            <label for="exampleInputEmail1" class="form-label labelName">Email</label>
+            <input type="email" class="form-control text-muted" placeholder="e.g johndoe@gmail.com" formControlName="email"
+                style="width:449px;height: 42px; font-family: system-ui,">
+        </div>
+        <div class="mt-2">
+            <div class="form-text text-danger"
+                *ngIf="email&& email.errors?.['required']&&(email.touched|| email.dirty)">
+                Email is required
+            </div>
+            <div class="form-text text-danger" *ngIf="email&& (email.errors?.['email']) &&(email.touched||email.dirty)">
+                Please Enter Valid Email
+            </div>
+        </div>
+        <div class="formLabel">
+            <label for="exampleInputEmail1" class="form-label labelName">Password</label>
+            <input type="{{ showPassword ? 'text' : 'password' }}" class="form-control text-muted"
+                placeholder="Enter your password" formControlName="password"
+                style="height: 42px; width: 449px; font-family: system-ui;" />
+            <span class="password-toggle" (click)="togglePassword()">
+                <i class="fa toggle-icon" [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+            </span>
+            <div class="form-text text-danger"
+                *ngIf="password&& password.errors?.['required']&&(password.touched|| password.dirty)">
+                Password is required
+            </div>
+            <div class="form-text text-danger"
+                *ngIf="password&& (password.errors?.['minlength']) &&(password.touched||password.dirty)">
+                Password should be at least 6 characters long
+            </div>
+        </div>
+        <div class="forgotPassword">
+            Forgot Password?
+        </div>
+        <button class="button" [disabled]="loginForm.invalid" (click)="login()">Login</button>
+    </form>
 </div>
